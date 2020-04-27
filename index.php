@@ -19,6 +19,8 @@
   <!-- Custom styles for this template -->  
   <link rel="stylesheet" type="text/css" href="css/style.css">
 
+  <!-- favicon -->
+  <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon" sizes="16x16">
 </head>
 
 <body>
