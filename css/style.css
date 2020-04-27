@@ -25,7 +25,7 @@ html,body
 .frontImage {
   padding-top: 100px;
   padding-bottom: 140px;
-  background-image: url("../img/qurt-preview.jpg");
+  background-image: url("../img/product-banners/product-banner-qurt.jpg");
   background-size: cover;
   color: white;
 }
