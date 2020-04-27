@@ -1,42 +1,40 @@
 <?php 
-  require "includes/config.php";
+    require "includes/config.php";
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <title>Молочные продукты</title>
+    <title>Молочные продукты</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap 4 cdn CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->  
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Custom styles for this template -->  
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
-  <!-- favicon -->
-  <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon" sizes="16x16">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon" sizes="16x16">
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <?php include "includes/navbar.php"; ?>
+    <!-- Navigation -->
+    <?php include "includes/navbar.php"; ?>
 
-  
-  <!-- front page image -->
-  <div class="frontImage my-4">
-    <div class="container">
-      <h1 class="display-3">Добро пожаловать!</h1>
-      <p class="lead">Мы предлагаем нашим клиентам самые натуральные молочные продукты.</p>
-   </div>
-  </div>
-
+    <!-- front page image -->
+    <div class="frontImage my-4">
+        <div class="container">
+            <h1 class="display-3">Добро пожаловать!</h1>
+            <p class="lead">Мы предлагаем нашим клиентам самые натуральные молочные продукты.</p>
+        </div>
+    </div>
 
   <!-- Page Content -->
   <div class="container" id="products">
