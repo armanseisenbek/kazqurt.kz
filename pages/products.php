@@ -1,27 +1,27 @@
 <?php 
-  require "../includes/config.php";
+  	require "../includes/config.php";
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  	<meta name="description" content="">
+  	<meta name="author" content="">
 
-  <title>Молочные продукты</title>
+  	<title>Молочные продукты</title>
 
-  <!-- Bootstrap CSS cdn -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  	<!-- Bootstrap CSS cdn -->
+  	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->  
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  	<!-- Custom styles for this template -->  
+  	<link rel="stylesheet" type="text/css" href="../css/style.css">
 
-  <!-- Gallery styles -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css"/>
-  <link rel="stylesheet" href="../css/compact-gallery.css">
+  	<!-- Gallery styles -->
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css"/>
+  	<link rel="stylesheet" href="../css/compact-gallery.css">
 
 </head>
 
@@ -36,8 +36,7 @@
   	<?php
   		$products = mysqli_query($connection, "SELECT * FROM `products` WHERE `id` = " . (int) $_GET['id']); 
 
-  		if ( mysqli_num_rows($products) <= 0 ) { 
-  	?>
+  		if ( mysqli_num_rows($products) <= 0 ) { ?>
 
   		<p>Запрашиваемая вами страница не найдена!</p>
 
@@ -46,15 +45,16 @@
   			$prod = mysqli_fetch_assoc($products);
   	?>
   			<!-- Jumbotron Header -->
-    		<header class="jumbotron" id="qurt-jumb" style="background-image: url(../img/product-banners/<?php echo $prod['banner']; ?>);">
+    		<header class="jumbotron" id="qurt-jumb" 
+    		style="background-image: url(../img/product-banners/<?php echo $prod['banner']; ?>);">
+    			<!-- title of product -->
       			<h1 class="display-3 text-center"><?php echo $prod['title']; ?></h1>
+      			<!-- text on product banner -->
       			<p class="lead"><?php echo $prod['banner_info'];?></p>
     		</header>
 
     		<!--Section: Contact v.2-->
 			<div class="mb-4" id="anchor">
-
-	    		
 
     			<div class="row">
 
@@ -66,30 +66,25 @@
 
 	    				<!-- send -->
 						<?php
-						if ( isset($_POST['send']) ){
+						if ( isset($_POST['send']) ) {
+							// array for errors
+							$errors = array();
 
-								$errors = array();
+							// checking for empty name or phone entry
+							if ($_POST['name'] == '') $errors[] = "Введите имя!";
+							if ($_POST['phone'] == '') $errors[] = "Введите номер!";
 
-							if ($_POST['name'] == '' ){
-								$errors[] = "Введите имя!";
-							}
-
-							if ($_POST['phone'] == '' ){
-								$errors[] = "Введите номер!";
-							}
-
+							// if there are no errors
 							if ( empty($errors) ){
 								mysqli_query($connection, "INSERT INTO  `customers` (`product_id`, `name`, `phone`, `message`, `date`) VALUES ('". $prod['id'] ."', '". $_POST['name'] ."','". $_POST['phone'] ."','". $_POST['message'] ."', NOW() )");
 
 								echo '<span style="color:green;"> Заявка отправлена! Ждите когда с вами свяжутся! </span>';
-							} else {
+							} else { // print out errors
 								echo '<span style="color:red;">' . $errors['0'] . '</span>';
 							}
 						}
 						?>
-
 						<!-- / send -->
-
 
 			            <form  id="contact-form"  name="contact-form" action="products.php?id=<?php echo $prod['id']; ?>#anchor" method="POST">
 						
@@ -175,14 +170,17 @@
 		            </div>
 		            <div class="row no-gutters">
             				
-					<?php 
+					<?php
+					// 9 gallery images with loop 
         			for ($i = 1; $i <= 9; $i++) {
         			?>
+
         				<div class="col-md-6 col-lg-4 item zoom-on-hover">
 			        		<a class="lightbox" href="../img/product-gallery/<?php echo $prod['gallery_title'];?>/<?php echo $prod['gallery_title'] . $i . '.jpg'; ?>">
 			                	<img class="img-fluid image" src="../img/product-gallery/<?php echo $prod['gallery_title'];?>/<?php echo $prod['gallery_title'] . $i . '.jpg'; ?>">
 	            			</a>
 	            		</div>
+
 	            	<?php
           			}
         			?>	
@@ -200,15 +198,17 @@
   	?>
 
   	</div>
+
   	<!-- Footer -->
   	<?php include "../includes/footer.php"; ?>
   	<!-- ./Footer -->
 
-	<!-- Bootstrap JS and jquery -->
+	<!-- jquery -->
   	<script
   	src="https://code.jquery.com/jquery-3.4.1.min.js"
   	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   	crossorigin="anonymous"></script>
+  	<!-- Bootstrap 4 js cdn  -->
   	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 
 </body>
