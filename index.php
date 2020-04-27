@@ -36,55 +36,59 @@
         </div>
     </div>
 
-  <!-- Page Content -->
-  <div class="container" id="products">
-    <h2 class="heading">Наши товары</h2>
+    <!-- Page Content -->
+    <div class="container" id="products">
+        <h2 class="heading">Наши товары</h2>
 
-    <!-- Page Features -->
-    <div class="row text-center">
+        <!-- Page Features -->
+        <div class="row text-center">
 
-      <!-- Products catalog -->
-        <?php 
-          $products = mysqli_query($connection, "SELECT * FROM `products`");
-        ?>
+            <!-- Products catalog -->
+            <?php 
+                $products = mysqli_query($connection, "SELECT * FROM `products`");
+            ?>
 
-        <?php 
-          while ( $prod = mysqli_fetch_assoc($products) ) {
-        ?>
+            <?php while ( $prod = mysqli_fetch_assoc($products) ) { ?>
+
             <div class="col-lg-4 col-md-6 mb-4">
-              <a href="/pages/products.php?id=<?php echo $prod['id']; ?>">
-                <div class="card" style="background-image: url(img/product-covers/<?php echo $prod['cover'] ?>);">
-                  <div class="card-img-overlay">
-                    <h4 class="card-title"><?php echo $prod['title']; ?></h4>
-                    <div class="card-text">
-                      <p><?php echo $prod['cover_info'] ?></p>
-                      <button type="button" class="btn btn-success btn-lg">Выбрать</button>
+
+                <a href="/pages/products.php?id=<?php echo $prod['id']; ?>">
+                    <!-- background image of product card -->
+                    <div class="card" style="background-image: url(img/product-covers/<?php echo $prod['cover'] ?>);">
+                        <div class="card-img-overlay">
+                            <!-- title of product card -->
+                            <h4 class="card-title"><?php echo $prod['title']; ?></h4>  
+                            <!-- text of product card -->
+                            <div class="card-text">
+                                <p><?php echo $prod['cover_info'] ?></p>
+                                <button type="button" class="btn btn-success btn-lg">Выбрать</button>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-              </a>
+                </a>
+
             </div>
-        <?php
-          }
-        ?>
-      <!-- / Products catalog -->
+
+            <?php } ?>
+            <!-- / Products catalog -->
+
+        </div>
+        <!-- / Page Features -->
 
     </div>
-    <!-- /.row -->
+    <!-- / Page Content -->
 
-  </div>
-  <!-- /.container -->
+    <!-- Footer -->
+    <?php include "includes/footer.php"; ?>
+    <!-- ./Footer -->
 
-  <!-- Footer -->
-  <?php include "includes/footer.php"; ?>
-  <!-- ./Footer -->
-
-  <!-- Bootstrap JS and jquery -->
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- jquery -->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <!-- Bootstrap 4 js cdn -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
