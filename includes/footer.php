@@ -136,7 +136,7 @@
     <!-- Copyright -->
     <div class="footer-copyright text-center text-black-50 py-3">
         © 2020 Copyright:
-        <a class="dark-grey-text" href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    <div class="footer-copyright text-center text-black-50 py-3">© 2020 Copyright:
     </div>
     <!-- Copyright -->
 
