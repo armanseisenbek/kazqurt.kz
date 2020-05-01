@@ -1,0 +1,11 @@
+/* Footer */
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+div.socialLinks {
+    color: white;
+    background-color: #007b5e;
+}
+
+div.linkIcons {
+    /*margin: 15px;*/
+}
