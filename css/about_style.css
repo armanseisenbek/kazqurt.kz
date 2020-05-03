@@ -1,0 +1,74 @@
+/*We have section which class is call*/
+/*we gave to all section other shade, than also make some border*/
+.call{
+	background: #e5e5e5;
+	border-bottom: 1px solid #dde3e7;
+	padding: 30px 0;
+}
+
+.phone{
+ width: 455px;
+}
+
+/* Here we place our text with it's own paddings*/
+.phone__text{
+ padding-top: 5px;
+ color:	#110c11;
+font-size: 14px;
+text-transform: uppercase;
+width: 180px;
+padding-left: 56px;
+}
+
+
+.phone__text span{
+	font-size: 16px;
+	margin-top: -4px; 
+	display: block;
+}
+
+
+.phone__number{
+ color:	#14141d;
+ font-size: 22px;
+ font-weight: 500;
+ margin-left: 42px;
+
+}
+.gold{
+	color: #b29600;
+}
+
+.green{
+	color: #4DBD33;
+}
+/* styling skills section, to make their positions more clearly*/
+.left{
+	border-right: 1px solid  #dde3e7;
+	box-shadow: 0 20px 90px rgba(0,0,0,0.2);
+}
+
+.up{
+	border-top: 2px solid  #dde3e7;
+	box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+.down{
+	margin-top: 50px; 
+}
+/* Here we give sizes of our pictures and turn their visability lower to create
+ ACTIVE element effect*/
+.slide_img{
+	width: 270px;
+	height: 156px;
+	margin-bottom: 10px; 
+	border: 1px solid #dde3e7;
+	opacity: 0.7;
+	transition: 0.3s;
+}
+
+/*Pseudo-class hover will make visiabilty normal again*/
+.slide_img:hover {
+	opacity: 1;
+	
+}
+

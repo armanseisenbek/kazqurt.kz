@@ -8,8 +8,18 @@
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Главная
+                    <a class="nav-link" href="/index.php">Главная
                         <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li>
+                      <a class="nav-link" href="../pages/about.php">О нас
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+                <li>
+                      <a class="nav-link" href="../pages/products.php">Prod
+                        <span class="sr-only"></span>
                     </a>
                 </li>
 
@@ -25,3 +35,4 @@
         </div>
     </div>
 </nav>
+<br>
