@@ -16,9 +16,6 @@
   	<!-- Bootstrap CSS cdn -->
   	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- login form styling -->
-    <link rel="stylesheet" href="../css/popup.css">
-
   	<!-- Custom styles for this template -->
   	<link rel="stylesheet" type="text/css" href="../css/style.css">
 
@@ -29,34 +26,6 @@
 </head>
 
 <body>
-
-  <!-- sign up -->
-  <main>
-    <div class="button js-reg-button-campaign"><span>Login</span></div>
-  </main>
-  <div class="overlay js-reg-overlay-campaign">
-    <div class="popup js-popup-campaign">
-      <form class="" action="reg.php" method="POST">
-        <input type="text" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="password" name="password" placeholder="Confirm Password">
-        <input type="submit" name="send" value="Sign Up">
-      </form>
-      <p class="js-log-button-campaign">Login</p>
-    </div>
-  </div>
-
-  <div class="overlay js-log-overlay-campaign">
-    <div class="popup js-popup-campaign">
-      <form class="" action="reg.php" method="POST">
-        <input type="text" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit" name="send" value="Login">
-      </form>
-      <p class="js-reg-button-campaign">Sign Up</p>
-    </div>
-  </div>
-
 
 	<!-- Navigation -->
   	<?php include "../includes/navbar.php"; ?>
@@ -241,10 +210,6 @@
   	crossorigin="anonymous"></script>
   	<!-- Bootstrap 4 js cdn  -->
   	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-
-<!-- popup js and jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="../scripts/popup.js"></script>
 
 </body>
 

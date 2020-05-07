@@ -1,19 +1,19 @@
 // Модальное окно
 
 // открыть по кнопке
-$('.js-reg-button-campaign').click(function() {
+$('.signupButton').click(function() {
   // $("*").fadeOut();
-	$('.js-reg-overlay-campaign').fadeIn();
-	$('.js-log-overlay-campaign').fadeOut();
-	$('body').css('overflow', 'hidden');
+	$('.loginDiv').fadeIn();
+	$('.signupDiv').fadeOut();
+	// $('body').css('overflow', 'hidden');
 	$('.container').css('filter', 'brightness(35%)');
 	$('body').css('background-color', 'rgba(0, 0, 0, .8)');
 });
 
-$('.js-log-button-campaign').click(function() {
+$('.loginButton').click(function() {
   // $("*").fadeOut();
-	$('.js-log-overlay-campaign').fadeIn();
-	$('.js-reg-overlay-campaign').fadeOut();
+	$('.signupDiv').fadeIn();
+	$('.loginDiv').fadeOut();
 	$('body').css('overflow', 'hidden');
 	$('.container').css('filter', 'brightness(35%)');
 	$('body').css('background-color', 'rgba(0, 0, 0, .8)');
@@ -21,11 +21,11 @@ $('.js-log-button-campaign').click(function() {
 
 // закрыть по клику вне окна
 $(document).mouseup(function (e) {
-	var popup = $('.js-popup-campaign');
-	if (e.target!=popup[0]&&popup.has(e.target).length === 0){
-		$('.js-reg-overlay-campaign').fadeOut();
-		$('.js-log-overlay-campaign').fadeOut();
-		$('body').css('overflow', 'scroll');
+	var popup = $('.popup');
+	if (e.target != popup[0] && popup.has(e.target).length === 0){
+		$('.loginDiv').fadeOut();
+		$('.signupDiv').fadeOut();
+		$('body').css('overflow-y', 'scroll');
 		$('body').css('background-color', 'white');
 		$('.container').css('filter', 'brightness(100%)');
 	}
