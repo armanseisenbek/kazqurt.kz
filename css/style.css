@@ -4,8 +4,8 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css');
 
 
-/* body */
-html,body {
+/* /// body /// */
+html, body {
     font-family: 'Nunito', sans-serif;
     width: 100%;
     height: 100%;
@@ -22,21 +22,16 @@ html,body {
     text-transform: uppercase;
 }
 
-/* index page */
-
+/* /// index page /// */
 .frontImage {
-  padding-top: 100px;
-  padding-bottom: 140px;
-  background-image: url("../img/product-banners/product-banner-qurt.jpg");
-  background-size: cover;
-  color: white;
+    margin-bottom: 70px !important;
+    padding-top: 100px;
+    padding-bottom: 140px;
+    background-image: url("../img/product-banners/product-banner-qurt.jpg");
+    background-size: cover;
+    text-align: center;
+    color: white;
 }
-
-#products {
-  margin-bottom: 50px;
-}
-
-
 
 .card {
     border: none;
@@ -51,27 +46,45 @@ html,body {
 }
 
 .card-text {
-  font-size: 120%; 
-  text-align: justify;
-  position: absolute;
-  bottom: 5%;
-  left: 5%;
-  right: 5%;
-  color: #fff;
+    font-size: 120%; 
+    text-align: justify;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+    color: #fff;
+}
+/* /// review block /// */
+
+.review {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.mySlides {
+    margin: 0 auto;
+    padding: 15px;
+    text-align: justify;
+    width: 80%;
+    background-color: lightgray;
+}
+
+.slideButton {
+    margin: 20px
 }
 
 /* products page */
-
 .jumbotron {
-  margin-top: 76px;
-  background-size: cover;
-  color: white;
+    margin-top: 76px;
+    background-size: cover;
+    color: white;
 }
 
 .contacts {
-  font-size: 150%;
+    font-size: 150%;
 }
 
 .md-form {
-  padding-bottom: 15px;
+    padding-bottom: 15px;
 }

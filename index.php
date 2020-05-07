@@ -26,7 +26,7 @@
     </div>
 
     <!-- Page Content -->
-    <div class="container" id="products">
+    <div class="container">
         <h2 class="heading">Наши товары</h2>
 
         <!-- Page Features -->
@@ -62,6 +62,27 @@
         </div>
         <!-- / Page Features -->
 
+        <!-- Review -->
+        <div class="review">
+            <h2 class="heading">Отзывы наших покупателей</h2>
+            <p class="mySlides">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p class="mySlides">
+                dfaksjdfhasdjfasdlfkas;ldj
+            </p>
+
+            <button class="slideButton btn btn-success" onclick="plusDivs(-1)">Другой отзыв</button>
+            <!-- js script for slide -->
+            <script src="scripts/slide.js"></script>
+        </div>
+        <!-- / Review -->
+
     </div>
     <!-- / Page Content -->
 
@@ -70,6 +91,7 @@
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
+
     <!-- Bootstrap 4 js cdn -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 
