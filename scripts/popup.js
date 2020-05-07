@@ -2,7 +2,6 @@
 
 // открыть по кнопке
 $('.js-reg-button-campaign').click(function() {
-  // $("*").fadeOut();
 	$('.js-reg-overlay-campaign').fadeIn();
 	$('.js-log-overlay-campaign').fadeOut();
 	$('body').css('overflow', 'hidden');
@@ -10,8 +9,8 @@ $('.js-reg-button-campaign').click(function() {
 	$('body').css('background-color', 'rgba(0, 0, 0, .8)');
 });
 
+// открыть
 $('.js-log-button-campaign').click(function() {
-  // $("*").fadeOut();
 	$('.js-log-overlay-campaign').fadeIn();
 	$('.js-reg-overlay-campaign').fadeOut();
 	$('body').css('overflow', 'hidden');
