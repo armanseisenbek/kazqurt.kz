@@ -1,4 +1,4 @@
-<?php 
+<?php
   	require "../includes/config.php";
 ?>
 <!DOCTYPE html>
@@ -16,7 +16,10 @@
   	<!-- Bootstrap CSS cdn -->
   	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 
-  	<!-- Custom styles for this template -->  
+    <!-- login form styling -->
+    <link rel="stylesheet" href="../css/popup.css">
+
+  	<!-- Custom styles for this template -->
   	<link rel="stylesheet" type="text/css" href="../css/style.css">
 
   	<!-- Gallery styles -->
@@ -27,6 +30,34 @@
 
 <body>
 
+  <!-- sign up -->
+  <main>
+    <div class="button js-reg-button-campaign"><span>Login</span></div>
+  </main>
+  <div class="overlay js-reg-overlay-campaign">
+    <div class="popup js-popup-campaign">
+      <form class="" action="reg.php" method="POST">
+        <input type="text" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <input type="password" name="password" placeholder="Confirm Password">
+        <input type="submit" name="send" value="Sign Up">
+      </form>
+      <p class="js-log-button-campaign">Login</p>
+    </div>
+  </div>
+
+  <div class="overlay js-log-overlay-campaign">
+    <div class="popup js-popup-campaign">
+      <form class="" action="reg.php" method="POST">
+        <input type="text" name="email" placeholder="Email">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" name="send" value="Login">
+      </form>
+      <p class="js-reg-button-campaign">Sign Up</p>
+    </div>
+  </div>
+
+
 	<!-- Navigation -->
   	<?php include "../includes/navbar.php"; ?>
 
@@ -34,7 +65,7 @@
   	<div class="container">
 
   	<?php
-  		$products = mysqli_query($connection, "SELECT * FROM `products` WHERE `id` = " . (int) $_GET['id']); 
+  		$products = mysqli_query($connection, "SELECT * FROM `products` WHERE `id` = " . (int) $_GET['id']);
 
   		if ( mysqli_num_rows($products) <= 0 ) { ?>
 
@@ -45,7 +76,7 @@
   			$prod = mysqli_fetch_assoc($products);
   	?>
   			<!-- Jumbotron Header -->
-    		<header class="jumbotron" id="qurt-jumb" 
+    		<header class="jumbotron" id="qurt-jumb"
     		style="background-image: url(../img/product-banners/<?php echo $prod['banner']; ?>);">
     			<!-- title of product -->
       			<h1 class="display-3 text-center"><?php echo $prod['title']; ?></h1>
@@ -87,11 +118,11 @@
 						<!-- / send -->
 
 			            <form  id="contact-form"  name="contact-form" action="products.php?id=<?php echo $prod['id']; ?>#anchor" method="POST">
-						
+
 							<label for="subject" class="">Ваши контактные данные</label>
 		                	<!--Grid row-->
 		                	<div class="row">
-								
+
 			                    <!--Grid column-->
 			                    <div class="col-md-6">
 			                        <div class="md-form mb-0">
@@ -147,8 +178,8 @@
 			                       	<p><i class="fa fa-phone"></i> ТЕЛЕФОН: 8-777-777-77-77</p>
 			                       	<p><i class="fa fa-envelope"></i> ПОЧТА: kazqurtkz@gmail.com</p>
 		                   		</div>
-		                       	
-		                       	
+
+
 		                   	</div>
 		                   	<!--Grid column-->
 
@@ -164,14 +195,14 @@
 
     		<!-- Gallery -->
         	<section class="gallery-block compact-gallery">
-        		
+
 		            <div class="heading">
 		            	<h2>Галерея</h2>
 		            </div>
 		            <div class="row no-gutters">
-            				
+
 					<?php
-					// 9 gallery images with loop 
+					// 9 gallery images with loop
         			for ($i = 1; $i <= 9; $i++) {
         			?>
 
@@ -183,10 +214,10 @@
 
 	            	<?php
           			}
-        			?>	
-		        			
+        			?>
+
 		        	</div>
-	        	
+
 	    	</section>
 		    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
 		    <script>
@@ -210,6 +241,10 @@
   	crossorigin="anonymous"></script>
   	<!-- Bootstrap 4 js cdn  -->
   	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+<!-- popup js and jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../scripts/popup.js"></script>
 
 </body>
 
