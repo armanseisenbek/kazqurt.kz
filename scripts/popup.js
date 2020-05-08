@@ -29,3 +29,8 @@ $(document).mouseup(function (e) {
 		$('.container').css('filter', 'brightness(100%)');
 	}
 });
+
+
+$('.js-close-window').click(function() {
+	$('.loginResult').fadeOut();
+});
