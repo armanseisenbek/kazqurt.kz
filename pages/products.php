@@ -38,7 +38,7 @@ require "../includes/config.php";
 
 		if (mysqli_num_rows($products) <= 0) { ?>
 
-			<p>Запрашиваемая вами страница не найдена!</p>
+			<p>The page you requested was not found!</p>
 
 		<?php
 		} else {
@@ -57,34 +57,22 @@ require "../includes/config.php";
 			<!--Section: Contact v.2-->
 			<div class="mb-4" id="anchor">
 				<div class="cover_info1">
+					<!-- Display information about current product -->
 					<p>
 						<?php
+
 						echo $prod['cover_info'];
+
 						?>
-						Натуральный домашний курт. Изготовлен по древнейшим рецептам кочевников. Содержит в своем составе кальций, белки и ценные микроэлементы. Натуральный домашний курт. Изготовлен по древнейшим рецептам кочевников. Содержит в своем составе кальций, белки и цен
+					</p>
+					<p>
+						You can see information <a href="../pages/about.php">About us</a> here!
 					</p>
 
 				</div>
-				<!-- <div class="row"> -->
-				<!-- <div class="col-md-6 mb-md-0 mb-5">
-					<div class="row">
-						<h3 class="heading">Also connect with us on <a href="#social-icons"> social networks!</a></h3>
-
-						<div class="col-md-auto">
-							<div class="contacts">
-								<p><i class="fa fa-whatsapp" style="color: #4FCE5D;"></i> WHATSAPP: 8-777-777-77-77</p>
-								<p><i class="fa fa-telegram" style="color: #0088cc"></i> TELEGRAM: 8-777-777-77-77</p>
-								<p><i class="fa fa-phone"></i> ТЕЛЕФОН: 8-777-777-77-77</p>
-								<p><i class="fa fa-envelope"></i> ПОЧТА: kazqurtkz@gmail.com</p>
-							</div>
 
 
-						</div>
-
-					</div>
-				</div> -->
 				<div id="submit-button"></div>
-				<!--Grid column-->
 				<div class="order-section">
 
 					<!--Section heading-->
@@ -93,20 +81,16 @@ require "../includes/config.php";
 					<!-- send -->
 					<?php
 					if (isset($_POST['send'])) {
-						// array for errors
-						$errors = array();
 
-						// checking for empty name or phone entry
-						if ($_POST['name'] == '') $errors[] = "Введите имя!";
-						if ($_POST['phone'] == '') $errors[] = "Введите номер!";
 
-						// if there are no errors
-						if (empty($errors)) {
+						// if user authorized 
+						// now it does not work 
+						if ($_SESSION['username']) {
 							mysqli_query($connection, "INSERT INTO  `customers` (`product_id`, `name`, `phone`, `message`, `date`) VALUES ('" . $prod['id'] . "', '" . $_POST['name'] . "','" . $_POST['phone'] . "','" . $_POST['message'] . "', NOW() )");
 
 							echo '<span style="color:green;"> Заявка отправлена! Ждите когда с вами свяжутся! </span>';
 						} else { // print out errors
-							echo '<span style="color:red;">' . $errors['0'] . '</span>';
+							echo '<span style="color:red;">Please login</span>';
 						}
 					}
 					?>
@@ -119,101 +103,95 @@ require "../includes/config.php";
 					</form>
 
 				</div>
-				<!--Grid column-->
+
+				<!--Section: Contact v.2-->
+
+				<!-- Gallery -->
+				<section class="gallery-block compact-gallery">
+
+					<div class="heading">
+						<h2>Gallery</h2>
+					</div>
+					<div class="row no-gutters">
+
+						<?php
+						// 9 gallery images with loop 
+						for ($i = 1; $i <= 9; $i++) {
+						?>
+
+							<div class="col-md-6 col-lg-4 item zoom-on-hover">
+								<a class="lightbox" href="../img/product-gallery/<?php echo $prod['gallery_title']; ?>/<?php echo $prod['gallery_title'] . $i . '.jpg'; ?>">
+									<img class="img-fluid image" src="../img/product-gallery/<?php echo $prod['gallery_title']; ?>/<?php echo $prod['gallery_title'] . $i . '.jpg'; ?>">
+								</a>
+							</div>
+
+						<?php
+						}
+						?>
+
+						<div class="bottom-section">
+							<!--  -->
+							<h2 class="heading">Our other products</h2>
+
+							<div class="row no-gutters">
+								<?php
+
+								// SQL query for get count of products
+								$products_get_count = mysqli_query($connection, "SELECT COUNT(id) FROM `products`");
+								// extract data from the database to the array 
+								$prod1 = mysqli_fetch_assoc($products_get_count);
+
+								$counter = 0;
+
+								for ($i = 1; $i <= $prod1['COUNT(id)']; $i++) {
+
+									// now we have only 3 product if add more products remove this comment
+									// skip the current product
+									// if ((int) $_GET['id'] == $i)
+									// 	continue;
+
+									//display only 3 product
+									if ($counter > 3)
+										break;
+
+									$counter++;
+
+									// SQL query for extract data from the database via ID 
+									$productid = mysqli_query($connection, "SELECT * FROM `products` WHERE `id` = " . $i);
+									$product = mysqli_fetch_assoc($productid);
 
 
+								?>
+									<div class="col-md-6 col-lg-4 item zoom-on-hover">
+										<a href="/pages/products.php?id=<?php echo $i; ?>">
+											<img class="img-fluid image" src="../img/product-gallery/<?php echo $product['gallery_title']; ?>/<?php echo $product['gallery_title'] . 1 . '.jpg'; ?>">
 
-				<!-- </div> -->
+										</a>
+									</div>
+								<?php
+								}
+								?>
+							</div>
 
-			</div>
-			<!--Section: Contact v.2-->
-
-			<!-- Gallery -->
-			<section class="gallery-block compact-gallery">
-
-				<div class="heading">
-					<h2>Галерея</h2>
-				</div>
-				<div class="row no-gutters">
-
-					<?php
-					// 9 gallery images with loop 
-					for ($i = 1; $i <= 9; $i++) {
-					?>
-
-						<div class="col-md-6 col-lg-4 item zoom-on-hover">
-							<a class="lightbox" href="../img/product-gallery/<?php echo $prod['gallery_title']; ?>/<?php echo $prod['gallery_title'] . $i . '.jpg'; ?>">
-								<img class="img-fluid image" src="../img/product-gallery/<?php echo $prod['gallery_title']; ?>/<?php echo $prod['gallery_title'] . $i . '.jpg'; ?>">
-							</a>
-						</div>
-
-					<?php
-					}
-					?>
-
-					<div class="bottom-section">
-						<!--  -->
-						<h2 class="heading">Our other products</h2>
-
-						<div class="row no-gutters">
-							<?php
-
-							// SQL query for get count of products
-							$products_get_count = mysqli_query($connection, "SELECT COUNT(id) FROM `products`");
-							// extract data from the database to the array 
-							$prod1 = mysqli_fetch_assoc($products_get_count);
-
-							$counter = 0;
-
-							for ($i = 1; $i <= $prod1['COUNT(id)']; $i++) {
-
-								// now we have only 3 product if add more products remove this comment
-								// skip the current product
-								// if ((int) $_GET['id'] == $i)
-								// 	continue;
-
-								//display only 3 product
-								if ($counter > 3)
-									break;
-
-								$counter++;
-
-								// SQL query for extract data from the database via ID 
-								$productid = mysqli_query($connection, "SELECT * FROM `products` WHERE `id` = " . $i);
-								$product = mysqli_fetch_assoc($productid);
-
-
-							?>
-								<div class="col-md-6 col-lg-4 item zoom-on-hover">
-									<a href="/pages/products.php?id=<?php echo $i; ?>">
-										<img class="img-fluid image" src="../img/product-gallery/<?php echo $product['gallery_title']; ?>/<?php echo $product['gallery_title'] . 1 . '.jpg'; ?>">
-
-									</a>
-								</div>
-							<?php
-							}
-							?>
 						</div>
 
 					</div>
 
-				</div>
-
-			</section>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-			<script>
-				baguetteBox.run('.compact-gallery', {
-					animation: 'slideIn'
-				});
-			</script>
-			<!-- / Gallery -->
-		<?php
+				</section>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+				<script>
+					baguetteBox.run('.compact-gallery', {
+						animation: 'slideIn'
+					});
+				</script>
+				<!-- / Gallery -->
+			<?php
 		}
-		?>
+			?>
 
 
+			</div>
 	</div>
-
 	<!-- Footer -->
 	<div id="social-icons"></div>
 	<?php include "../includes/footer.php"; ?>
