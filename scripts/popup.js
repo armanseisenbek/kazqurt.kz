@@ -6,6 +6,7 @@ $('.signupButton').click(function() {
 	$('.loginDiv').fadeIn();
 	$('.signupDiv').fadeOut();
 	// $('body').css('overflow', 'hidden');
+
 	$('.container').css('filter', 'brightness(35%)');
 	$('body').css('background-color', 'rgba(0, 0, 0, .8)');
 });
@@ -14,6 +15,7 @@ $('.loginButton').click(function() {
   // $("*").fadeOut();
 	$('.signupDiv').fadeIn();
 	$('.loginDiv').fadeOut();
+
 	$('body').css('overflow', 'hidden');
 	$('.container').css('filter', 'brightness(35%)');
 	$('body').css('background-color', 'rgba(0, 0, 0, .8)');
@@ -29,4 +31,9 @@ $(document).mouseup(function (e) {
 		$('body').css('background-color', 'white');
 		$('.container').css('filter', 'brightness(100%)');
 	}
+});
+
+
+$('.js-close-window').click(function() {
+	$('.loginResult').fadeOut();
 });

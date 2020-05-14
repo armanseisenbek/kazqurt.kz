@@ -1,5 +1,5 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
@@ -10,6 +10,7 @@ SET
   SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET
   AUTOCOMMIT = 0;
+
 START TRANSACTION;
 SET
   time_zone = "+00:00";
@@ -109,6 +110,7 @@ ADD
   -- Индексы таблицы `products`
   --
 ALTER TABLE `products`
+
 ADD
   PRIMARY KEY (`id`);
 --
@@ -117,6 +119,7 @@ ADD
   --
   -- AUTO_INCREMENT для таблицы `customers`
   --
+
 ALTER TABLE `customers`
 MODIFY
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -125,9 +128,11 @@ MODIFY
   -- AUTO_INCREMENT для таблицы `products`
   --
 ALTER TABLE `products`
+
 MODIFY
   `id` int(11) NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 4;
+
 COMMIT;
   /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
   /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
