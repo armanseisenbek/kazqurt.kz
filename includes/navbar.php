@@ -2,7 +2,10 @@
     <div class="container">
 
         <!-- Kazqurt.kz -->
-        <a class="navbar-brand" href="/"><?php echo $config['title']; ?></a>
+        <a class="navbar-brand" href="/"> 
+            <img src="favicon.ico" style="height: 18px"> 
+            <?php echo $config['title']; ?>
+        </a>
 
         <!-- burger for mobile devices -->
         <button 
@@ -12,9 +15,10 @@
             data-target="#navbarResponsive" 
             aria-controls="navbarResponsive" 
             aria-expanded="false" 
-            aria-label="Toggle navigation">
-                <!-- icon -->
-                <span class="navbar-toggler-icon"></span>
+            aria-label="Toggle navigation"
+        >
+            <!-- hamburger icon -->
+            <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -28,10 +32,10 @@
                     <a class="nav-link" href="../pages/about.php"> О нас </a>
                 </li>
                 <li>
-                    <div class="btn btn-success loginButton">Login</div>
+                    <div class="btn btn-outline-light loginButton">Login</div>
                 </li>
-                <li class="nav-item">
-                    <div class="btn btn-success signupButton">Sign up</div>
+                <li >
+                    <div class="btn btn-light signupButton">Sign up</div>
                 </li>
 
             </ul>

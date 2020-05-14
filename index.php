@@ -1,6 +1,6 @@
-<?php 
-    require "includes/config.php";
-?>
+<!-- configurations -->
+<?php require "includes/config.php"; ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -10,15 +10,16 @@
     <?php require "includes/head.php"; ?>
 
     <title>Молочные продукты</title>
+
 </head>
 
 <body>
 
-    <!-- Navigation -->
+    <!-- navigation bar -->
     <?php include "includes/navbar.php"; ?>
 
-    <!-- front page image -->
-    <div class="frontImage my-4">
+    <!-- front page banner -->
+    <div class="pageBanner my-4">
         <div class="container">
             <h1 class="display-3">Добро пожаловать!</h1>
             <p class="lead">Мы предлагаем нашим клиентам самые натуральные молочные продукты.</p>
@@ -27,6 +28,7 @@
 
     <!-- Page Content -->
     <div class="container">
+
         <h2 class="heading">Наши товары</h2>
 
         <!-- Page Features -->
@@ -48,7 +50,10 @@
                             <!-- text of product card -->
                             <div class="card-text">
                                 <p><?php echo $prod['cover_info'] ?></p>
-                                <button type="button" class="btn btn-success btn-lg">Выбрать</button>
+                                <!-- button -->
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-success btn-lg">Выбрать</button>
+                                </div>
                             </div>
                         </div>
                     </div>
