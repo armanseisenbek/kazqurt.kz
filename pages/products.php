@@ -15,6 +15,8 @@ require "../includes/config.php";
 
 	<!-- Bootstrap CSS cdn -->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+	<!-- icon link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<!-- Custom styles for this template -->
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -64,29 +66,11 @@ require "../includes/config.php";
 						?>
 					</p>
 					<p>
-						You can see information <a href="../pages/about.php">About us here!</a>
+						You can see information About us <a href="../pages/about.php">here</a>!
 					</p>
 
 				</div>
 
-
-				<div id="submit-button"></div>
-				<div class="order-section">
-
-					<!--Section heading-->
-					<h2 class="heading">Send your request and we contact you</h2>
-
-					<form id="contact-form" name="contact-form" action="/my_purchases.html" method="POST">
-						<div class="text-center">
-							<div class="input-section">
-								<label for="">Select quantity: </label>
-								<input type="number" name="quantity" min=1 required>
-							</div>
-							<input type="submit" name="send" class="btn btn-primary btn-lg btn-block" value="Submit"></input>
-						</div>
-					</form>
-
-				</div>
 
 				<!--Section: Contact v.2-->
 
@@ -113,8 +97,17 @@ require "../includes/config.php";
 						}
 						?>
 
+						<div id="submit-button"></div>
+						<div class="order-section">
+
+							<!--Section heading-->
+							<a href="/my_purchases.php?id=<?php echo $_GET['id'] ?>">
+								<button type="submit" name="send" class="btn btn-success btn-lg btn-block">
+									Add to cart <i class="fa fa-shopping-bag"></i>
+								</button></a>
+						</div>
+
 						<div class="bottom-section">
-							<!--  -->
 							<h2 class="heading">Our other products</h2>
 
 							<div class="row no-gutters">
@@ -180,7 +173,6 @@ require "../includes/config.php";
 	<div id="social-icons"></div>
 	<?php include "../includes/footer.php"; ?>
 	<!-- ./Footer -->
-
 	<!-- jquery -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<!-- Bootstrap 4 js cdn  -->
