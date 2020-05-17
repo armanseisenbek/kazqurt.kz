@@ -16,9 +16,6 @@ require "../includes/config.php";
   <!-- Bootstrap CSS cdn -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- login form styling -->
-  <link rel="stylesheet" href="../css/popup.css">
-
   <!-- Custom styles for this template -->
   <link rel="stylesheet" type="text/css" href="../css/style.css">
 
@@ -29,49 +26,6 @@ require "../includes/config.php";
 </head>
 
 <body>
-
-  <!-- сам настрой стайлинг -->
-  <div class="loginResult" style="display: <?php echo $_GET['display']; ?>;">
-    <div class="messageWindow">
-      <?php
-      echo "<h1 style=\"text-align:center;\">" . $_GET['message'] . "</h1>";
-      ?>
-      <h1 class="js-close-window">ok</h1>
-    </div>
-  </div>
-
-  <!-- sign up -->
-  <main>
-    <div class="button js-reg-button-campaign"><span>Login</span></div>
-  </main>
-  <div class="overlay js-reg-overlay-campaign">
-    <div class="popup js-popup-campaign">
-
-      <form class="" action="../login.inc.php?id=<?php echo $_GET['id'] ?>" method="POST">
-        <input type="text" name="email" placeholder="Email" required>
-        <input type="password" name="password" placeholder="Password" pattern="^(?=.*[A-Z])(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%&*?])[A-Za-z0-9!@#$%&*?]{8,}$" required>
-        <input type="password" name="confirm" placeholder="Confirm Password" pattern="^(?=.*[A-Z])(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%&*?])[A-Za-z0-9!@#$%&*?]{8,}$" required>
-        <button type="submit" name="signup">Sign Up</button>
-      </form>
-      <p class="js-log-button-campaign">Login</p>
-      <p id="res">d</p>
-    </div>
-  </div>
-
-  <div class="overlay js-log-overlay-campaign">
-    <div class="popup js-popup-campaign">
-      <?php
-      echo "<h1 style=\"text-align:center;\">" . $_GET['error'] . "</h1>";
-      ?>
-      <form class="" action="../login.inc.php?id=<?php echo $_GET['id'] ?>" method="POST">
-        <input type="text" name="email" placeholder="Email" required>
-        <input type="password" name="password" placeholder="Password" pattern="^(?=.*[A-Z])(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%&*?])[A-Za-z0-9!@#$%&*?]{8,}$" required>
-        <button type="submit" name="login">Login</button>
-      </form>
-      <p class="js-reg-button-campaign">Sign Up</p>
-    </div>
-  </div>
-
 
   <!-- Navigation -->
   <?php include "../includes/navbar.php"; ?>
@@ -236,7 +190,7 @@ require "../includes/config.php";
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script>
-    baguetteBox.run('.compact-gallery', { animation: 'slideIn'});
+      baguetteBox.run('.compact-gallery', { animation: 'slideIn'});
     </script>
     <!-- / Gallery -->
     <?php

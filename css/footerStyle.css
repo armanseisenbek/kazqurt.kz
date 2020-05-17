@@ -1,11 +1,39 @@
 /* Footer */
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
+footer {
+	background-color: #00664e;
+	color: white;
+}
+
 div.socialLinks {
     color: white;
     background-color: #007b5e;
 }
 
-div.linkIcons {
-    /*margin: 15px;*/
+a.iconLink {
+    margin: 0 16px;
+    color: white;
+}
+
+h6.footerHeader {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+hr.headerBottomLine {
+	width: 60px;
+	background-color: white;
+}
+
+a.footerLink:link {
+	color: white;
+}
+
+a.footerLink:hover {
+	color: gray;
+}
+
+div.footerCopyright {
+	background-color: #00291f;
 }

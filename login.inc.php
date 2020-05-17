@@ -1,54 +1,66 @@
 <?php
 
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-  $confirm = $_POST['confirm'];
+$email = $_POST['email'];
+$password = $_POST['password'];
+$confirm = $_POST['confirm'];
+
+if (strpos($_SERVER['HTTP_REFERER'], '&') === false) {
+  $redirect = $_SERVER['HTTP_REFERER'];
+}else {
+  $redirect = substr($_SERVER['HTTP_REFERER'], 0, strpos($_SERVER['HTTP_REFERER'], "?&"));
+}
 
 
+if (isset($_POST['signup'])) {
+  if ($password == $confirm) {
 
-  if (isset($_POST['signup'])) {
-    if ($password == $confirm) {
+    $dbServername = "localhost";
+    $dbUsername = "root";
+    $dbPassword = "";
+    $dbName = "kazqurtkz";
 
-      $dbServername = "localhost";
-      $dbUsername = "root";
-      $dbPassword = "";
-      $dbName = "kazqurtkz";
+    $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
 
-      $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
+    $mysql = new mysqli('localhost', 'root', '', 'kazqurtkz');
+    $result = $mysql->query("SELECT * FROM `users` WHERE `email` = '$email'");
+    $user = $result->fetch_assoc();
 
-      $mysql = new mysqli('localhost', 'root', '', 'kazqurtkz');
-      $result = $mysql->query("SELECT * FROM `users` WHERE `email` = '$email'");
-      $user = $result->fetch_assoc();
+    if ($user['email'] != $email) {
 
-      if ($user['email'] != $email) {
+      $hash = password_hash($password, PASSWORD_DEFAULT);
 
-          $hash = password_hash($password, PASSWORD_DEFAULT);
+      $sql = "insert into users(email, password) values ('$email', '$hash')";
+      mysqli_query($conn, $sql);
 
-          $sql = "insert into users(email, password) values ('$email', '$hash')";
-          mysqli_query($conn, $sql);
+      setcookie('user', $_POST['email'], time() + 3600, "/");
 
-          header("Location: ../pages/products.php?id=" . $_GET['id'] . "&message=successful registration&display=block");
-      }else {
-          header("Location: ../pages/products.php?id=" . $_GET['id'] . "&message=User with this email already exists&display=block");
-      }
+      // отрезаю еррорные сообщения с адресной строки
+      header("Location: " . $redirect);
     }else {
-        header("Location: ../pages/products.php?id=" . $_GET['id'] . "&message=Разные пароли&display=block");
+      header("Location: " . $redirect . "?&message=User with this email already exists&display=block");
     }
+  }else {
+    header("Location: " . $redirect . "?&message=Разные пароли&display=block");
   }
+}
 
-  if (isset($_POST['login'])) {
+if (isset($_POST['login'])) {
 
-      $mysql = new mysqli('localhost', 'root', '', 'kazqurtkz');
-  		$result = $mysql->query("SELECT * FROM `users` WHERE `email` = '$email'");
-      $user = $result->fetch_assoc();
+  $mysql = new mysqli('localhost', 'root', '', 'kazqurtkz');
+  $result = $mysql->query("SELECT * FROM `users` WHERE `email` = '$email'");
+  $user = $result->fetch_assoc();
 
-      $hashPassword = $user['password'];
+  $hashPassword = $user['password'];
 
-      if (password_verify($password, $hashPassword)) {
-          header("Location: ../pages/products.php?id=" . $_GET['id'] . "&message=Logged in&display=block");
-      }else {
-        header("Location: ../pages/products.php?id=" . $_GET['id'] . "&message=Invalid Password&display=block");
-      }
+  if (password_verify($password, $hashPassword)) {
+
+    setcookie('user', $_POST['email'], time() + 3600, "/");
+
+    // отрезаю еррорные сообщения с адресной строки
+    header("Location: " . $redirect);
+  }else {
+    header("Location: " . $redirect . "?&message=Invalid Password&display=block");
   }
+}
 
 ?>

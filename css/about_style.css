@@ -1,5 +1,15 @@
 /*We have section which class is call*/
 /*we gave to all section other shade, than also make some border*/
+
+.aboutFrontImage {
+	text-align: center;
+  padding-top: 100px;
+  padding-bottom: 140px;
+  background-image: url("https://img-fotki.yandex.ru/get/102548/2008163.34/0_113259_72258780_orig");
+  background-size: cover;
+  color: white;
+}
+
 .call{
 	background: #e5e5e5;
 	border-bottom: 1px solid #dde3e7;
@@ -35,40 +45,16 @@ padding-left: 56px;
  margin-left: 42px;
 
 }
-.gold{
-	color: #b29600;
-}
 
-.green{
-	color: #4DBD33;
-}
-/* styling skills section, to make their positions more clearly*/
-.left{
-	border-right: 1px solid  #dde3e7;
-	box-shadow: 0 20px 90px rgba(0,0,0,0.2);
-}
-
-.up{
-	border-top: 2px solid  #dde3e7;
-	box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-}
-.down{
-	margin-top: 50px; 
-}
 /* Here we give sizes of our pictures and turn their visability lower to create
  ACTIVE element effect*/
 .slide_img{
-	width: 270px;
-	height: 156px;
+	width: 200px;
+	height: 200px;
 	margin-bottom: 10px; 
 	border: 1px solid #dde3e7;
-	opacity: 0.7;
-	transition: 0.3s;
-}
-
-/*Pseudo-class hover will make visiabilty normal again*/
-.slide_img:hover {
-	opacity: 1;
-	
+	border-radius: 200px 200px 200px 200px;
+-moz-border-radius: 200px 200px 200px 200px;
+-webkit-border-radius: 200px 200px 200px 200px;
 }
 
