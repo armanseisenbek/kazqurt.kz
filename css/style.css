@@ -101,6 +101,19 @@ body {
   border: 2px solid rgb(52, 116, 121);
   border-radius: 6px;
 }
+.input-section input {
+  width: 60px;
+  margin: 30px 0;
+  /*remove border around*/
+  border: 1.5px solid #d3d3d3;
+  /*remove line around elements*/
+  outline: 0;
+  /*change text color*/
+  color: #111;
+}
+label {
+  font-size: 25px;
+}
 
 .bottom-section {
   margin-top: 10%;

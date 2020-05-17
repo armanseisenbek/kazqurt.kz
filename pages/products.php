@@ -60,13 +60,11 @@ require "../includes/config.php";
 					<!-- Display information about current product -->
 					<p>
 						<?php
-
-						echo $prod['cover_info'];
-
+						echo $prod['info'];
 						?>
 					</p>
 					<p>
-						You can see information <a href="../pages/about.php">About us</a> here!
+						You can see information <a href="../pages/about.php">About us here!</a>
 					</p>
 
 				</div>
@@ -76,29 +74,15 @@ require "../includes/config.php";
 				<div class="order-section">
 
 					<!--Section heading-->
-					<h2 class="heading">Оставьте свою заявку, чтобы мы могли связаться с вами</h2>
+					<h2 class="heading">Send your request and we contact you</h2>
 
-					<!-- send -->
-					<?php
-					if (isset($_POST['send'])) {
-
-
-						// if user authorized 
-						// now it does not work 
-						if ($_SESSION['username']) {
-							mysqli_query($connection, "INSERT INTO  `customers` (`product_id`, `name`, `phone`, `message`, `date`) VALUES ('" . $prod['id'] . "', '" . $_POST['name'] . "','" . $_POST['phone'] . "','" . $_POST['message'] . "', NOW() )");
-
-							echo '<span style="color:green;"> Заявка отправлена! Ждите когда с вами свяжутся! </span>';
-						} else { // print out errors
-							echo '<span style="color:red;">Please login</span>';
-						}
-					}
-					?>
-					<!-- / send -->
-
-					<form id="contact-form" name="contact-form" action="products.php?id=<?php echo $prod['id']; ?>#anchor" method="POST">
+					<form id="contact-form" name="contact-form" action="/my_purchases.html" method="POST">
 						<div class="text-center">
-							<input type="submit" name="send" class="btn btn-outline-primary btn-lg btn-block" value="Оставить заявку"></input>
+							<div class="input-section">
+								<label for="">Select quantity: </label>
+								<input type="number" name="quantity" min=1 required>
+							</div>
+							<input type="submit" name="send" class="btn btn-primary btn-lg btn-block" value="Submit"></input>
 						</div>
 					</form>
 
