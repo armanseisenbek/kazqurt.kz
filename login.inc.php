@@ -42,7 +42,7 @@ if (isset($_POST['signup'])) {
   }else {
     header("Location: " . $redirect . "?&message=Разные пароли&display=block");
   }
-}
+} 
 
 if (isset($_POST['login'])) {
 
