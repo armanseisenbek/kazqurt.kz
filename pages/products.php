@@ -16,8 +16,8 @@ require "../includes/config.php";
 	<!-- Bootstrap CSS cdn -->
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 
-  	<!-- Custom styles for this template -->
-  	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<!-- Custom styles for this template -->
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
 
 	<!-- Gallery styles -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
@@ -40,18 +40,19 @@ require "../includes/config.php";
 
 			<p>The page you requested was not found!</p>
 
-  	<?php
-  		} else {
-  			$prod = mysqli_fetch_assoc($products);
-  	?>
-  			<!-- Jumbotron Header -->
-    		<header class="jumbotron" id="qurt-jumb"
-    		style="background-image: url(../img/product-banners/<?php echo $prod['banner']; ?>);">
-    			<!-- title of product -->
-      			<h1 class="display-3 text-center"><?php echo $prod['title']; ?></h1>
-      			<!-- text on product banner -->
-      			<p class="lead"><?php echo $prod['banner_info'];?></p>
-    		</header>
+		<?php
+		} else {
+			$prod = mysqli_fetch_assoc($products);
+		?>
+			<!-- Jumbotron Header -->
+			<header class="jumbotron" id="qurt-jumb" style="background-image: url(../img/product-banners/<?php echo $prod['banner']; ?>);">
+				<!-- title of product -->
+				<a href="#submit-button">
+					<h1 class="display-3 text-center"><?php echo $prod['title']; ?></h1>
+				</a>
+				<!-- text on product banner -->
+				<p class="lead"><?php echo $prod['banner_info']; ?></p>
+			</header>
 
 			<!--Section: Contact v.2-->
 			<div class="mb-4" id="anchor">
@@ -111,80 +112,6 @@ require "../includes/config.php";
 						<?php
 						}
 						?>
-            
-						<!-- / send -->
-
-			            <form  id="contact-form"  name="contact-form" action="products.php?id=<?php echo $prod['id']; ?>#anchor" method="POST">
-
-							<label for="subject" class="">Ваши контактные данные</label>
-		                	<!--Grid row-->
-		                	<div class="row">
-
-			                    <!--Grid column-->
-			                    <div class="col-md-6">
-			                        <div class="md-form mb-0">
-			                            <input type="text" id="name" name="name" class="form-control" placeholder="Имя" value="<?php echo $_POST['name'];?>">
-			                        </div>
-			                    </div>
-		                    	<!--Grid column-->
-
-		                    	<!--Grid column-->
-		                    	<div class="col-md-6">
-			                        <div class="md-form mb-0">
-			                            <input type="text" id="phone" name="phone" class="form-control" placeholder="Ваш телефонный номер" value="<?php echo $_POST['phone'];?>">
-			                        </div>
-		                    	</div>
-		                    	<!--Grid column-->
-
-		                	</div>
-		                	<!--Grid row-->
-
-			                <!--Grid row-->
-			                <div class="row">
-
-		                    	<!--Grid column-->
-		                    	<div class="col-md-12">
-		                        	<div class="md-form">
-		                            	<textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" placeholder="Комментарий (не обязательно)"></textarea>
-		                        	</div>
-		                    	</div>
-		                    	<!--Grid column-->
-
-			                </div>
-			                <!--Grid row-->
-
-							<div class="text-center">
-                					<input type="submit" name="send" class="btn btn-primary" value="Оставить заявку"></input>
-            				</div>
-            			</form>
-
-        			</div>
-        			<!--Grid column-->
-
-        			<div class="col-md-6 mb-md-0 mb-5">
-
-        				<h2 class="heading">Или свяжитесь с нами по:</h2>
-        				<!--Grid row-->
-			            <div class="row">
-
-		                    <!--Grid column-->
-		                   	<div class="col-md-12">
-		                   		<div class="contacts">
-		                   			<p><i class="fa fa-whatsapp" style="color: #4FCE5D;"></i> WHATSAPP: 8-777-777-77-77</p>
-			                       	<p><i class="fa fa-telegram" style="color: #0088cc"></i> TELEGRAM: 8-777-777-77-77</p>
-			                       	<p><i class="fa fa-phone"></i> ТЕЛЕФОН: 8-777-777-77-77</p>
-			                       	<p><i class="fa fa-envelope"></i> ПОЧТА: kazqurtkz@gmail.com</p>
-		                   		</div>
-
-
-		                   	</div>
-		                   	<!--Grid column-->
-
-			            </div>
-			            <!--Grid row-->
-        			</div>
-
-    			</div>
 
 						<div class="bottom-section">
 							<!--  -->
@@ -258,10 +185,6 @@ require "../includes/config.php";
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<!-- Bootstrap 4 js cdn  -->
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-
-<!-- popup js and jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="../scripts/popup.js"></script>
 
 </body>
 
