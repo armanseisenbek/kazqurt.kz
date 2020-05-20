@@ -1,25 +1,18 @@
-<?php
-require "../includes/config.php";
-?>
+<!-- configurations -->
+<?php require "../includes/config.php"; ?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="">
-	<meta name="author" content="">
+	<!-- external head file -->
+    <?php require "../includes/head.php"; ?>
 
 	<title>Milk products</title>
 
-	<!-- Bootstrap CSS cdn -->
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 	<!-- icon link -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-	<!-- Custom styles for this template -->
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
 	<!-- Gallery styles -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
