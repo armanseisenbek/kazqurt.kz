@@ -260,9 +260,7 @@ require "../includes/config.php";
     baguetteBox.run('.compact-gallery', { animation: 'slideIn'});
     </script>
     <!-- / Gallery -->
-    <?php
-  }
-  ?>
+
 
 </div>
 
