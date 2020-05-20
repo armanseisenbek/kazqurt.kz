@@ -23,29 +23,30 @@ SET
   --
   -- --------------------------------------------------------
   --
-  -- Структура таблицы `customers`
+  -- Структура таблицы `users`
   --
-  CREATE TABLE `customers` (
+  CREATE TABLE `users` (
     `id` int(11) NOT NULL,
-    `product_id` int(11) NOT NULL,
-    `name` varchar(255) NOT NULL,
-    `phone` varchar(255) NOT NULL,
-    `message` text DEFAULT NULL,
-    `date` datetime NOT NULL
+    `email` varchar(55) NOT NULL,
+    `password` varchar(60) NOT NULL
   ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+--
+INSERT INTO `users` (`id`, `email`, `password`)
+VALUES(1, 'admin', 'admin');
 -- --------------------------------------------------------
   --
   -- Структура таблицы `products`
   --
   CREATE TABLE `products` (
     `id` int(11) NOT NULL,
-    `title` varchar(100) NOT NULL,
+    `title` varchar(255) NOT NULL,
     `cover` varchar(255) NOT NULL,
     `cover_info` varchar(255) NOT NULL,
     `banner` varchar(255) NOT NULL,
     `banner_info` varchar(255) NOT NULL,
     `product_info` varchar(255) NOT NULL,
-    `gallery_title` varchar(100) NOT NULL
+    `gallery_title` varchar(100) NOT NULL,
+    `info` varchar(500) NOT NULL
   ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 --
   -- Дамп данных таблицы `products`
@@ -58,7 +59,8 @@ INSERT INTO `products` (
     `banner`,
     `banner_info`,
     `product_info`,
-    `gallery_title`
+    `gallery_title`,
+    `info`
   )
 VALUES
   (
@@ -67,9 +69,10 @@ VALUES
     'product-cover-qurt.jpg',
     'Натуральный домашний курт. Изготовлен по древнейшим рецептам кочевников. Содержит в своем составе кальций, белки и ценные микроэлементы. ',
     'product-banner-qurt.jpg',
-    'Курт — казахский сухой кисломолочный продукт.',
+    'Qurt is a Kazakh dry fermented milk product',
     'цена - 50 тг шт',
-    'qurt'
+    'qurt',
+    'Qurt is a traditional product that belongs to the Kazakh culture. It is made by drying fermented milk, from which "Airan" is also obtained. Right after milking, the milk is put in a container and left to go sour. When it becomes thick, we work the fermented milk to make its characteristic round shape. All of the balls are then left to dry outdoors. Once dried, the Qurt is stored inside cloths, making it easier to transport'
   ),
   (
     2,
@@ -79,7 +82,8 @@ VALUES
     'product-banner-maslo.jpg',
     'Butter is a dairy product made from the fat and protein components of milk or cream',
     'цена maslo',
-    'maslo'
+    'maslo',
+    'Butter is a dairy product made from the fat and protein components of milk or cream. It is a semi-solid emulsion at room temperature, consisting of approximately 80% butterfat. To make butter - after milking, the liquid was poured into a large bowl and put on even place. When it had sour cream accumulate it, then shaking or stirring it for long hours. Butter has to be kept in a cold place. Nowadays butter in the shops seems not as nutritious and tasty as that processed without machines by saba. So people prefer hand-made butter'
   ),
   (
     3,
@@ -89,21 +93,24 @@ VALUES
     'product-banner-smetana.jpg',
     'Kaymak is a creamy dairy product similar to clotted cream',
     'smetana product info',
-    'smetana'
+    'smetana',
+    'Kaymak is a dairy product similar to clotted cream, composed of about 60% milkfat.  It looks creamy, it is white in color, and it tastes particularly sweet. Kaymak was traditionally used to give energy and provided the daily requirements of minerals and vitamins. It is a popular breakfast food and can be spread on bread or eaten with honey.'
   );
--- Таблица заказов хранит заказы нужно даполнить
-  -- CREATE TABLE `orders` (
-  --   `id` int(11) NOT NULL,
-  --   `product_id` int(11) NOT NULL,
-  --   `customer_id` int(11) NOT NULL,
-  --   `date` datetime NOT NULL
-  -- ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
-  -- Индексы сохранённых таблиц
+-- order table
+  CREATE TABLE `orders` (
+    `id` int(11) NOT NULL,
+    `product_name` varchar(100) NULL,
+    `customer_email` varchar(100) NULL,
+    `quantity` int(11) NULL,
+    `date` datetime NULL,
+    `status` varchar(255) NULL
+  ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+-- Индексы сохранённых таблиц
   --
   --
-  -- Индексы таблицы `customers`
+  -- Индексы таблицы `users`
   --
-ALTER TABLE `customers`
+ALTER TABLE `users`
 ADD
   PRIMARY KEY (`id`);
 --
@@ -114,16 +121,26 @@ ALTER TABLE `products`
 ADD
   PRIMARY KEY (`id`);
 --
+  -- Индексы таблицы `orders`
+ALTER TABLE `orders`
+ADD
+  PRIMARY KEY (`id`);
+--
   -- AUTO_INCREMENT для сохранённых таблиц
   --
   --
-  -- AUTO_INCREMENT для таблицы `customers`
+  -- AUTO_INCREMENT для таблицы `users`
   --
 
 ALTER TABLE `customers`
 MODIFY
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  AUTO_INCREMENT = 3;
+  AUTO_INCREMENT = 2;
+--
+  -- AUTO_INCREMENT для таблицы `users`
+ALTER TABLE `orders`
+MODIFY
+  `id` int(11) NOT NULL AUTO_INCREMENT;
 --
   -- AUTO_INCREMENT для таблицы `products`
   --
@@ -134,6 +151,7 @@ MODIFY
   AUTO_INCREMENT = 4;
 
 COMMIT;
+--
   /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
   /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
   /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

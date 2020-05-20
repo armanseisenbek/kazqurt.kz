@@ -81,17 +81,16 @@ div ul li {
 
 /* products page */
 .jumbotron {
-    margin-top: 76px;
-    background-size: cover;
-    color: white;
+  margin-top: 76px;
+  background-size: cover;
+  color: white;
 }
 
 .contacts {
-    font-size: 150%;
+  font-size: 150%;
 }
 
 .md-form {
-
   padding-bottom: 15px;
 }
 
@@ -114,17 +113,15 @@ div ul li {
 }
 
 .order-section {
-  max-width: 50%;
+  max-width: 40%;
   margin: auto;
-  margin-bottom: 10%;
-  margin-top: 10%;
+  margin-bottom: 5%;
+  margin-top: 5%;
   padding: 20px;
-  border: 2px solid rgb(52, 116, 121);
-  border-radius: 6px;
 }
-
+.order-section a {
+  text-decoration: none;
+}
 .bottom-section {
   margin-top: 10%;
-}
-    padding-bottom: 15px;
 }
