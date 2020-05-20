@@ -10,7 +10,7 @@
     <?php require "includes/head.php"; ?>
 
     <title>Молочные продукты</title>
-
+    
 </head>
 
 <body>

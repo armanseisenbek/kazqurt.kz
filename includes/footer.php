@@ -65,10 +65,10 @@
                 <h6 class="footerHeader">Products</h6>
                 <hr class="headerBottomLine mb-4 mt-0 d-inline-block mx-auto">
 
-                <p> <a class="footerLink" href="#!">Какая то ссылка</a> </p>
-                <p> <a class="footerLink" href="#!">Ссылка в Сибирь</a> </p>
-                <p> <a class="footerLink" href="#!">Ссыкло</a> </p>
-                <p> <a class="footerLink" href="#!">Сыыыы</a> </p>
+                <p> <a class="footerLink" href="#!">Main page</a> </p>
+                <p> <a class="footerLink" href="#!">About us</a> </p>
+                <p> <a class="footerLink" href="#!">Link 1</a> </p>
+                <p> <a class="footerLink" href="#!">Link 2</a> </p>
 
             </div>
             <!-- Grid column -->

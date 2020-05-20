@@ -1,18 +1,20 @@
-<?php 
-    require "../includes/config.php";
-?>
+<!-- configurations -->
+<?php require "../includes/config.php"; ?>
+
 <!DOCTYPE html>
 <html>
+
 <head>
 
 	<?php require "../includes/head.php"; ?>
 
-	<title>О нас</title>
+	<title>About us</title>
  	
- 	<!-- link to css -->
+ 	<!-- link to custom css -->
 	<link rel="stylesheet" type="text/css" href="../css/about_style.css">
 
 </head>
+
 <body>
 
 	<!-- navigation bar -->
@@ -87,7 +89,9 @@
 		<div class="row">
 
 			<div class="col-lg-3">
-				<img src="https://forbes.kz/img/articles/b05730715b012ac54a680349924c0d42-small.jpg" class="slide_img">
+				<img 
+					src="https://forbes.kz/img/articles/b05730715b012ac54a680349924c0d42-small.jpg" 
+					class="slide_img">
 			</div>
 			<div class="col-lg-9">
 				<h3>Location</h3>

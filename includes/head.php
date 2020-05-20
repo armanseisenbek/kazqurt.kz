@@ -6,9 +6,8 @@
 <!-- Bootstrap 4 cdn CSS -->
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Custom styles for this template -->  
+<!-- common styles for each page -->  
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 
 <!-- favicon -->
 <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon" sizes="16x16">
-
