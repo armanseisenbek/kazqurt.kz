@@ -39,6 +39,7 @@ VALUES(1, 'admin', 'admin');
   CREATE TABLE `products` (
     `id` int(11) NOT NULL,
     `title` varchar(255) NOT NULL,
+    `price` int(11) NOT NULL,
     `cover` varchar(255) NOT NULL,
     `cover_info` varchar(255) NOT NULL,
     `banner` varchar(255) NOT NULL,
@@ -53,6 +54,7 @@ VALUES(1, 'admin', 'admin');
 INSERT INTO `products` (
     `id`,
     `title`,
+    `price`,
     `cover`,
     `cover_info`,
     `banner`,
@@ -65,6 +67,7 @@ VALUES
   (
     1,
     'Qurt',
+    '50',
     'product-cover-qurt.jpg',
     'Натуральный домашний курт. Изготовлен по древнейшим рецептам кочевников. Содержит в своем составе кальций, белки и ценные микроэлементы. ',
     'product-banner-qurt.jpg',
@@ -76,6 +79,7 @@ VALUES
   (
     2,
     'Butter',
+    '999',
     'product-cover-maslo.jpg',
     'Молочный жир хорошо усваивается, сразу дает человеку энергию. Вот почему бутерброд со сливочным маслом считается отличным завтраком. Он дает нам силы и укрепляет организм.',
     'product-banner-maslo.jpg',
@@ -87,6 +91,7 @@ VALUES
   (
     3,
     'Kaymak',
+    '1500',
     'product-cover-smetana.jpg',
     'Сметана благодаря большому содержанию жира является очень питательным продуктом. В сметане содержится лецитин, который не дает образовываться отложениям холестерина в сосудах.',
     'product-banner-smetana.jpg',
@@ -95,14 +100,23 @@ VALUES
     'smetana',
     'Kaymak is a dairy product similar to clotted cream, composed of about 60% milkfat.  It looks creamy, it is white in color, and it tastes particularly sweet. Kaymak was traditionally used to give energy and provided the daily requirements of minerals and vitamins. It is a popular breakfast food and can be spread on bread or eaten with honey.'
   );
--- order table
+--
+  -- order table
   CREATE TABLE `orders` (
     `id` int(11) NOT NULL,
-    `product_name` varchar(100) NULL,
-    `customer_email` varchar(100) NULL,
-    `quantity` int(11) NULL,
-    `date` datetime NULL,
-    `status` varchar(255) NULL
+    `product_name` varchar(100) NOT NULL,
+    `customer_email` varchar(100) NOT NULL,
+    `quantity` int(11) NOT NULL,
+    `date` datetime NOT NULL,
+    `status` varchar(255) NOT NULL
+  ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+--
+  -- products in the cart
+  CREATE TABLE `cart` (
+    `id` int(11) NOT NULL,
+    `product_name` varchar(100) NOT NULL,
+    `customer_email` varchar(100) NOT NULL,
+    `price` int(11) NOT NULL
   ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 -- Индексы сохранённых таблиц
   --
@@ -124,6 +138,11 @@ ALTER TABLE `orders`
 ADD
   PRIMARY KEY (`id`);
 --
+  --  Индексы таблицы `orders`
+ALTER TABLE `cart`
+ADD
+  PRIMARY KEY (`id`);
+--
   -- AUTO_INCREMENT для сохранённых таблиц
   --
   --
@@ -134,8 +153,13 @@ MODIFY
   `id` int(11) NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 2;
 --
-  -- AUTO_INCREMENT для таблицы `users`
+  -- AUTO_INCREMENT для таблицы `orders`
 ALTER TABLE `orders`
+MODIFY
+  `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+  -- AUTO_INCREMENT для таблицы `cart`
+ALTER TABLE `cart`
 MODIFY
   `id` int(11) NOT NULL AUTO_INCREMENT;
 --
