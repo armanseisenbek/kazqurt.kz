@@ -71,30 +71,70 @@
 
 <!-- sign up -->
 <div class="overlay signupDiv">
-  <div class="popup js-popup-campaign">
+    <div class="popup js-popup-campaign">
 
-    <form class="" action="../login.inc.php?id=<?php echo $_GET['id'] ?>" method="POST">
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="password" name="password" placeholder="Password" oninput="checkPassword(this, 'warning1'); checkConfirm();" class="signupPassword" required>
-      <p id="warning1"></p>
-      <input type="password" name="confirm" placeholder="Confirm Password" oninput="checkConfirm()" class="signupConfirm" required>
-      <p id="ConfirmWarning"></p>
-      <button type="submit" name="signup">Sign Up</button>
-    </form>
-    <p class="loginButton" onclick="resetWarnings()">Login</p>
+
+        <form class="" action="../login.inc.php?id=<?php echo $_GET['id'] ?>" method="POST">
+            <h2 class="heading">Registration</h2>
+
+            <!-- email -->
+            <label>Your e-mail:</label>
+            <input type="email" name="email" placeholder="Email" required>
+            <br>
+            <!-- name -->
+            <label>Your name:</label>
+            <input type="text" name="name" placeholder="Name">
+            <br>
+            <!-- phone number -->
+            <label>Phone number:</label>
+            <input type="number" name="phone" placeholder="8-707-727-77-77">
+            <br>
+            <!-- city -->
+            <label>Your city:</label>
+            <input type="text" name="city" placeholder="Almaty">
+            <br>
+            <!-- password -->
+            <label>Create password:</label>
+            <input type="password" name="password" placeholder="Password" oninput="checkPassword(this, 'warning1'); checkConfirm();" class="signupPassword" required>
+            <p id="warning1"></p>
+            <!-- <br> -->
+            <!-- confirm password -->
+            <label>Confirm password:</label>
+            <input type="password" name="confirm" placeholder="Confirm Password" oninput="checkConfirm()" class="signupConfirm" required>
+            <p id="ConfirmWarning"></p>
+
+            <!-- sign up button -->
+            <div class="text-center">
+                <button type="submit" name="signup" class="btn btn-success">Sign Up</button>
+            </div>
+
+        </form>
   </div>
 </div>
 
+<!-- Login -->
 <div class="overlay loginDiv">
-  <div class="popup js-popup-campaign">
-    <form class="" action="../login.inc.php?id=<?php echo $_GET['id'] ?>" method="POST">
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="password" name="password" placeholder="Password" oninput="checkPassword(this, 'warning2')" required>
-      <p id="warning2"></p>
-      <button type="submit" name="login">Login</button>
-    </form>
-    <p class="signupButton" onclick="resetWarnings()">Sign Up</p>
-  </div>
+    <div class="popup js-popup-campaign">
+
+        <form class="" action="../login.inc.php?id=<?php echo $_GET['id'] ?>" method="POST">
+            <h2 class="heading">Login</h2>
+
+            <!-- email -->
+            <label>Your e-mail:</label>
+            <input type="email" name="email" placeholder="Email" required>
+            <!-- password -->
+            <label>Your password:</label>
+            <input type="password" name="password" placeholder="Password" oninput="checkPassword(this, 'warning2')" required>
+            <p id="warning2"></p>
+
+            <!-- login button -->
+            <div class="text-center">
+                <button type="submit" name="login" class="btn btn-success">Login</button>
+            </div>
+
+        </form>
+
+    </div>
 </div>
 
 
