@@ -27,13 +27,11 @@ html, body {
   color: #fff;
 }
 
-/* /// index page /// */
-
 .card {
   border: none;
   background-size: cover;
   height: 500px !important;
-  color: #fff;
+  color: white;
 }
 
 .card-title {
@@ -65,10 +63,6 @@ html, body {
   text-align: justify;
   width: 80%;
   background-color: lightgray;
-}
-
-.slideButton {
-  margin: 20px
 }
 
 /* navigation */

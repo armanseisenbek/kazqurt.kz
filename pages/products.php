@@ -35,6 +35,12 @@
 
 			// get information in the database as an array and set in the variable
 			$prod = mysqli_fetch_assoc($products);
+
+			if (!empty($_COOKIE['user']))
+				$isLogin = true;
+			else
+				$isLogin = false;
+
 		?>
 			<!-- Jumbotron Header -->
 			<header 

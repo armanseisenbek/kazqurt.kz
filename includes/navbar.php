@@ -36,7 +36,7 @@
                 <?php if($_COOKIE['user'] == ''): ?>
 
                 <li>
-                    <div class="btn btn-outline-light loginButton">Login</div>
+                    <div class="btn btn-success loginButton">Login</div>
                 </li>
 
                 <li>

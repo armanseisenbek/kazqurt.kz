@@ -37,7 +37,6 @@ $(document).mouseup(function (e) {
 	}
 });
 
-
 function checkPassword(Element, setWarning) {
 	var val = Element.value;
 	var pattern = /(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z0-9!@#$%&*?]{8,}$/;

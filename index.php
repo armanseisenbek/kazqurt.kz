@@ -1,6 +1,6 @@
-<!-- configurations -->
-<?php require "includes/config.php"; ?>
-
+<?php 
+    require "includes/config.php";
+?>
 <!DOCTYPE html>
 <html>
 
@@ -15,7 +15,7 @@
 
 <body>
 
-    <!-- navigation bar -->
+    <!-- Navigation -->
     <?php include "includes/navbar.php"; ?>
 
     <!-- front page banner -->
