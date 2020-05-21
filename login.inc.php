@@ -37,7 +37,7 @@ if (isset($_POST['signup'])) {
       $sql = "insert into customers(email, name, phone, city, review, password) values ('$email', '$name', '$phone', '$city', '$review', '$hash')";
       mysqli_query($conn, $sql);
 
-      setcookie('user', $_POST['email'], time() + 3600, "/");
+      setcookie('user', $name, time() + 3600, "/");
 
       // отрезаю еррорные сообщения с адресной строки
       header("Location: " . $redirect);
@@ -59,7 +59,7 @@ if (isset($_POST['login'])) {
 
   if (password_verify($password, $hashPassword)) {
 
-    setcookie('user', $_POST['email'], time() + 3600, "/");
+    setcookie('user', $user['name'], time() + 3600, "/");
 
     // отрезаю еррорные сообщения с адресной строки
     header("Location: " . $redirect);

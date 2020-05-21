@@ -46,7 +46,7 @@
                 <?php else: ?>
 
                 <li>
-                    <p><?=$_COOKIE['user']?>, <a href="../includes/exit.php">log out</a> </p>
+                    <div style="color: #fff;"><?=$_COOKIE['user']?> <a href="../includes/exit.php" class="btn btn-danger">log out</a> </div>
                 </li>
 
                 <?php endif; ?>
