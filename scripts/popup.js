@@ -40,7 +40,7 @@ $(document).mouseup(function (e) {
 
 function checkPassword(Element, setWarning) {
 	var val = Element.value;
-	var pattern = /^(?=.*[A-Z])(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%&*?])[A-Za-z0-9!@#$%&*?]{8,}$/;
+	var pattern = /(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z0-9!@#$%&*?]{8,}$/;
 	if (!val.match(pattern)) {
 		document.getElementById(setWarning).innerHTML = "Invalid password format";
 	}else{

@@ -34,7 +34,7 @@ if (isset($_POST['signup'])) {
 
       $hash = password_hash($password, PASSWORD_DEFAULT);
 
-      $sql = "insert into users(email, name, phone, city, review, password) values ('$email', '$name', '$phone', '$city', '$review', '$hash')";
+      $sql = "insert into customers(email, name, phone, city, review, password) values ('$email', '$name', '$phone', '$city', '$review', '$hash')";
       mysqli_query($conn, $sql);
 
       setcookie('user', $_POST['email'], time() + 3600, "/");
