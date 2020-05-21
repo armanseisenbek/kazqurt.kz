@@ -13,6 +13,8 @@
  	<!-- link to custom css -->
 	<link rel="stylesheet" type="text/css" href="../css/about_style.css">
 
+
+
 </head>
 
 <body>
@@ -35,19 +37,19 @@
 				<div class="container">
 					<div class="f-left">
 						<!-- Data target is numbers in that brackets -->
-						<div class="counter" data-target="17">3</div>
+						<div class="counter" data-target="17">00</div>
 						<h3>Уже купили</h3>
 
 					</div>
 					<div class="f-left">
 						<!-- Data target is numbers in that brackets -->
-						<div class="counter" data-target="17">3</div>
+						<div class="counter" data-target="17">00</div>
 						<h3>Партнеры</h3>
 
 					</div>
 					<div class="f-left">
 						<!-- Data target is numbers in that brackets -->
-						<div class="counter" data-target="17">3</div>
+						<div class="counter" data-target="17">00</div>
 						<h3>Сколько лет</h3>
 
 					</div>
@@ -161,5 +163,6 @@
 	<!-- footer -->
 	<?php include "../includes/footer.php"; ?>
 
+	<script type="text/javascript" src="../scripts/about.js"></script>
 </body>
 </html>
