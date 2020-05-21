@@ -22,18 +22,18 @@
 
 /* Here we place our text with it's own paddings*/
 .phone__text{
- padding-top: 5px;
- color:	#110c11;
-font-size: 14px;
-text-transform: uppercase;
-width: 180px;
-padding-left: 56px;
+	padding-top: 5px;
+	color:	#110c11;
+	font-size: 14px;
+	text-transform: uppercase;
+	width: 180px;
+	padding-left: 56px;
 }
 
 
 .phone__text span{
 	font-size: 16px;
-	margin-top: -4px; 
+	margin-top: -4px;
 	display: block;
 }
 
@@ -54,7 +54,17 @@ padding-left: 56px;
 	margin-bottom: 10px; 
 	border: 1px solid #dde3e7;
 	border-radius: 200px 200px 200px 200px;
--moz-border-radius: 200px 200px 200px 200px;
--webkit-border-radius: 200px 200px 200px 200px;
+	-moz-border-radius: 200px 200px 200px 200px;
+	-webkit-border-radius: 200px 200px 200px 200px;
 }
 
+.counters .container .f-left{
+	width: 33%;
+	margin-bottom: 15px;
+	float: left;
+}
+
+.counters .container .counter, .counters .container h3{
+	width: 100%;
+	text-align: center;
+}
