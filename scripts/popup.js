@@ -2,22 +2,22 @@
 
 // открыть по кнопке
 $('.signupButton').click(function() {
-  // $("*").fadeOut();
-	$('.loginDiv').fadeIn();
-	$('.signupDiv').fadeOut();
+	$('.loginDiv').fadeOut();
+	$('.signupDiv').fadeIn();
 	// $('body').css('overflow', 'hidden');
 	$('.container').css('filter', 'brightness(35%)');
+	$('.blur-img').css('filter', 'brightness(35%)');
 	$('body').css('background-color', 'rgba(0, 0, 0, .8)');
 
 	$('input').val('');
 });
 
 $('.loginButton').click(function() {
-  // $("*").fadeOut();
-	$('.signupDiv').fadeIn();
-	$('.loginDiv').fadeOut();
-	$('body').css('overflow', 'hidden');
+	$('.signupDiv').fadeOut();
+	$('.loginDiv').fadeIn();
+	// $('body').css('overflow', 'hidden');
 	$('.container').css('filter', 'brightness(35%)');
+	$('.blur-img').css('filter', 'brightness(35%)');
 	$('body').css('background-color', 'rgba(0, 0, 0, .8)');
 
 	$('input').val('');
@@ -33,6 +33,7 @@ $(document).mouseup(function (e) {
 		$('body').css('overflow-y', 'scroll');
 		$('body').css('background-color', 'white');
 		$('.container').css('filter', 'brightness(100%)');
+		$('.blur-img').css('filter', 'brightness(100%)');
 	}
 });
 

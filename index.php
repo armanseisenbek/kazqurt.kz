@@ -10,7 +10,7 @@
     <?php require "includes/head.php"; ?>
 
     <title>Milk products</title>
-    
+
 </head>
 
 <body>
@@ -19,7 +19,7 @@
     <?php include "includes/navbar.php"; ?>
 
     <!-- front page banner -->
-    <div class="pageBanner my-4">
+    <div class="pageBanner blur-img my-4">
         <div class="container">
             <h1 class="display-3">Welcome!</h1>
             <p class="lead">We offer our customers the most natural dairy products.</p>
@@ -35,7 +35,7 @@
         <div class="row text-center">
 
             <!-- Products catalog -->
-            <?php 
+            <?php
             $products = mysqli_query($connection, "SELECT * FROM `products`");
             while ( $prod = mysqli_fetch_assoc($products) ) { ?>
 
@@ -46,7 +46,7 @@
                     <div class="card" style="background-image: url( img/product-covers/product-cover-<?php echo $prod['title'] ?>.jpg );">
                         <div class="card-img-overlay">
                             <!-- title of product card -->
-                            <h4 class="card-title"><?php echo $prod['title']; ?></h4>  
+                            <h4 class="card-title"><?php echo $prod['title']; ?></h4>
                             <!-- text of product card -->
                             <div class="card-text">
                                 <p><?php echo $prod['cover_info'] ?></p>

@@ -70,51 +70,33 @@
 
 
 <!-- sign up -->
-<div class="overlay loginDiv">
-    <div class="popup js-popup-campaign">
-
-        <form class="" action="../login.inc.php?id=<?php echo $_GET['id'] ?>" method="POST">
-            <!-- email -->
-            <input type="email" name="email" placeholder="Email" required>
-            <!-- password -->
-            <input 
-                type="password" 
-                name="password" 
-                placeholder="Password" 
-                oninput="checkPassword(this, 'warning1'); checkConfirm();" 
-                class="signupPassword" required
-            >
-
-            <p id="warning1"></p>
-            <input 
-                type="password" 
-                name="confirm" 
-                placeholder="Confirm Password" 
-                oninput="checkConfirm()" 
-                class="signupConfirm" required
-            >
-
-            <p id="ConfirmWarning"></p>
-            <button type="submit" name="signup">Sign Up</button>
-        </form>
-
-        <p class="loginButton" onclick="resetWarnings()">Login</p>
-    </div>
-</div>
-
 <div class="overlay signupDiv">
-    <div class="popup js-popup-campaign">
+  <div class="popup js-popup-campaign">
 
-        <form class="" action="../login.inc.php?id=<?php echo $_GET['id'] ?>" method="POST">
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" oninput="checkPassword(this, 'warning2')" required>
-            <p id="warning2"></p>
-            <button type="submit" name="login">Login</button>
-        </form>
-
-        <p class="signupButton" onclick="resetWarnings()">Sign Up</p>
-    </div>
+    <form class="" action="../login.inc.php?id=<?php echo $_GET['id'] ?>" method="POST">
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" oninput="checkPassword(this, 'warning1'); checkConfirm();" class="signupPassword" required>
+      <p id="warning1"></p>
+      <input type="password" name="confirm" placeholder="Confirm Password" oninput="checkConfirm()" class="signupConfirm" required>
+      <p id="ConfirmWarning"></p>
+      <button type="submit" name="signup">Sign Up</button>
+    </form>
+    <p class="loginButton" onclick="resetWarnings()">Login</p>
+  </div>
 </div>
+
+<div class="overlay loginDiv">
+  <div class="popup js-popup-campaign">
+    <form class="" action="../login.inc.php?id=<?php echo $_GET['id'] ?>" method="POST">
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" oninput="checkPassword(this, 'warning2')" required>
+      <p id="warning2"></p>
+      <button type="submit" name="login">Login</button>
+    </form>
+    <p class="signupButton" onclick="resetWarnings()">Sign Up</p>
+  </div>
+</div>
+
 
 <!-- popup js and jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
