@@ -96,12 +96,12 @@
             <!-- password -->
             <label>Create password:</label>
             <input type="password" name="password" placeholder="Password" oninput="checkPassword(this, 'warning1'); checkConfirm();" class="signupPassword" required>
-            <p id="warning1"></p>
+            <p id="warning1" style="color: red"></p>
             <!-- <br> -->
             <!-- confirm password -->
             <label>Confirm password:</label>
             <input type="password" name="confirm" placeholder="Confirm Password" oninput="checkConfirm()" class="signupConfirm" required>
-            <p id="ConfirmWarning"></p>
+            <p id="ConfirmWarning" style="color: red"></p>
 
             <!-- sign up button -->
             <div class="text-center">
@@ -125,7 +125,7 @@
             <!-- password -->
             <label>Your password:</label>
             <input type="password" name="password" placeholder="Password" oninput="checkPassword(this, 'warning2')" required>
-            <p id="warning2"></p>
+            <p id="warning2" style="color: red"></p>
 
             <!-- login button -->
             <div class="text-center">
