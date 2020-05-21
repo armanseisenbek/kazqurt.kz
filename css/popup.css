@@ -3,7 +3,6 @@
 	background-color: rgba(0, 0, 0, .8);
 	display: none;
 	z-index: 1;
-	/*text-align: center;*/
 }
 
 .popup {
@@ -11,14 +10,21 @@
 	width: 400px;
 	height: 500px;
 	left: 50%;
-	/*top: 56px;*/
 	transform: translate(-50%, 0%);
-	/*padding: 40px;*/
-	/*box-sizing: border-box;*/
+	padding: 20px;
 	background-color: white;
-	/*color: #000;*/
-	text-align: center;
-	/*z-index: 1;*/
+}
+
+label {
+  padding: 4px 0 4px 0;
+  display: inline-block;
+}
+
+input {
+	float: right;
+	padding: 4px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
 }
 
 @media screen and (max-width: 768px) {
@@ -30,13 +36,12 @@
 }
 
 .popup form {
-	margin-top: 30%;
+	margin-top: 50px;
 }
 
 .loginResult{
 	position: fixed;
 	display: none;
-	/* background-color: pink; */
 	z-index: 1;
 }
 
