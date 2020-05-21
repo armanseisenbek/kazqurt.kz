@@ -1,25 +1,18 @@
-<?php
-
-require "../includes/config.php";
-?>
+<!-- configurations -->
+<?php require "../includes/config.php"; ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="">
-	<meta name="author" content="">
+
+	<!-- external head file -->
+	<?php require "../includes/head.php"; ?>
 
 	<title>My Cart</title>
-	<!-- Bootstrap 4 cdn CSS -->
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-	<!-- icon link -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+	<!-- jquery -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
 
 </head>
 
@@ -27,6 +20,7 @@ require "../includes/config.php";
 	<!-- Navigation -->
 	<?php include "../includes/navbar.php"; ?>
 	<br><br><br>
+	
 	<?php
 	// query on the database to get information about the product by id
 	$product = mysqli_query($connection, "SELECT * FROM `products` WHERE `title` = '" .  $_GET['id'] . "'");

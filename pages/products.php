@@ -65,7 +65,7 @@
 					<div id="submit-button"></div>
 					<div class="order-section">
 						<!-- link to the to cart -->
-						<a href="/my_purchases.php?id=<?php echo $prod['title'] ?>">
+						<a href="../pages/cart.php?id=<?php echo $prod['id'] ?>">
 							<!-- button with icon of bag -->
 							<button type="submit" name="send" class="btn btn-success btn-lg btn-block">
 								Add to cart <i class="fa fa-shopping-bag"></i>
