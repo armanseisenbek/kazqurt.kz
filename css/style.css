@@ -39,6 +39,7 @@ html, body {
 .card-title {
   font-size: 180%;
   font-weight: 600;
+  text-transform: uppercase;
 }
 
 .card-text {
@@ -91,14 +92,14 @@ div ul li {
   padding-bottom: 15px;
 }
 
-.jumbotron a {
+/*.jumbotron a {
   text-decoration: none;
   color: #fff;
 }
 
 .jumbotron a:hover {
   text-decoration: underline;
-}
+}*/
 
 .cover_info1 {
   max-width: 80%;

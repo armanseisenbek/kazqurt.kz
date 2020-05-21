@@ -38,12 +38,11 @@
 		?>
 			<!-- Jumbotron Header -->
 			<header 
-				class="jumbotron" 
-				id="qurt-jumb" 
-				style="background-image: url(../img/product-banners/<?php echo $prod['banner']; ?>);"
+				class="jumbotron"
+				style="background-image: url(../img/product-banners/product-banner-<?php echo $prod['title']; ?>.jpg);"
 			>
 				<!-- title of product -->
-				<h1 class="display-3 text-center"><?php echo $prod['title']; ?></h1>
+				<h1 class="display-3 text-center" style="text-transform: uppercase;"><?php echo $prod['title']; ?></h1>
 				<!-- text on product banner -->
 				<p class="lead"><?php echo $prod['banner_info']; ?></p>
 			</header>
@@ -73,8 +72,9 @@
 							<!-- grid column -->
 							<div class="col-md-6 col-lg-4 item zoom-on-hover">
 								<!-- show gallery with 9 images of current product -->
-								<a class="lightbox" href="../img/product-gallery/<?php echo $prod['gallery_title']; ?>/<?php echo $prod['gallery_title'] . $i . '.jpg'; ?>">
-									<img class="img-fluid image" src="../img/product-gallery/<?php echo $prod['gallery_title']; ?>/<?php echo $prod['gallery_title'] . $i . '.jpg'; ?>">
+								<a class="lightbox" 
+								href="../img/product-gallery/<?php echo $prod['title']; ?>/<?php echo $prod['title'] . $i . '.jpg'; ?>">
+									<img class="img-fluid image" src="../img/product-gallery/<?php echo $prod['title']; ?>/<?php echo $prod['title'] . $i . '.jpg'; ?>">
 								</a>
 							</div>
 
@@ -133,7 +133,8 @@
 								<a href="/pages/products.php?id=<?php echo $i; ?>">
 									<img 
 										class="img-fluid image" 
-										src="../img/product-gallery/<?php echo $product['gallery_title']; ?>/<?php echo $product['gallery_title'] . 1 . '.jpg'; ?>">
+										src="../img/product-gallery/<?php echo $product['title']; ?>/<?php echo $product['title'] . 1 . '.jpg'; ?>"
+									>
 								</a>
 							</div>
 

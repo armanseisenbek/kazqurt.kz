@@ -9,7 +9,7 @@
     <!-- external head file -->
     <?php require "includes/head.php"; ?>
 
-    <title>Молочные продукты</title>
+    <title>Milk products</title>
     
 </head>
 
@@ -21,15 +21,15 @@
     <!-- front page banner -->
     <div class="pageBanner my-4">
         <div class="container">
-            <h1 class="display-3">Добро пожаловать!</h1>
-            <p class="lead">Мы предлагаем нашим клиентам самые натуральные молочные продукты.</p>
+            <h1 class="display-3">Welcome!</h1>
+            <p class="lead">We offer our customers the most natural dairy products.</p>
         </div>
     </div>
 
     <!-- Page Content -->
     <div class="container">
 
-        <h2 class="heading">Наши товары</h2>
+        <h2 class="heading">Our products</h2>
 
         <!-- Page Features -->
         <div class="row text-center">
@@ -43,7 +43,7 @@
 
                 <a href="/pages/products.php?id=<?php echo $prod['id']; ?>">
                     <!-- background image of product card -->
-                    <div class="card" style="background-image: url( img/product-covers/<?php echo $prod['cover'] ?> );">
+                    <div class="card" style="background-image: url( img/product-covers/product-cover-<?php echo $prod['title'] ?>.jpg );">
                         <div class="card-img-overlay">
                             <!-- title of product card -->
                             <h4 class="card-title"><?php echo $prod['title']; ?></h4>  
@@ -52,7 +52,7 @@
                                 <p><?php echo $prod['cover_info'] ?></p>
                                 <!-- button -->
                                 <div class="text-center">
-                                    <button type="button" class="btn btn-success btn-lg">Выбрать</button>
+                                    <button type="button" class="btn btn-success btn-lg">Choose</button>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
 
         <!-- Review -->
         <div class="review">
-            <h2 class="heading">Отзывы наших покупателей</h2>
+            <h2 class="heading">customer reviews</h2>
             <p class="mySlides">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -82,7 +82,7 @@
                 dfaksjdfhasdjfasdlfkas;ldj
             </p>
 
-            <button class="slideButton btn btn-success" onclick="plusDivs(-1)">Другой отзыв</button>
+            <button class="slideButton btn btn-success" onclick="plusDivs(-1)">Another review</button>
             <!-- js script for slide -->
             <script src="scripts/slide.js"></script>
         </div>
@@ -90,6 +90,10 @@
 
     </div>
     <!-- / Page Content -->
+
+    <!-- Footer -->
+    <?php include "includes/footer.php"; ?>
+    <!-- ./Footer -->
 
     <!-- jquery -->
     <script
@@ -100,10 +104,5 @@
     <!-- Bootstrap 4 js cdn -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Footer -->
-    <?php include "includes/footer.php"; ?>
-    <!-- ./Footer -->
-
 </body>
-
 </html>
