@@ -84,22 +84,19 @@ div ul li {
   color: white;
 }
 
-.contacts {
-  font-size: 150%;
+.productInfo {
+  background: #fff4a3;
+  color: #b35900;
+  text-align: justify;
+  font-size: 20px;
+  padding: 20px;
+  border-radius: 5px
 }
 
-.md-form {
-  padding-bottom: 15px;
+.bottomProducts {
+  margin-bottom: 30px;
+  padding: 10px;
 }
-
-/*.jumbotron a {
-  text-decoration: none;
-  color: #fff;
-}
-
-.jumbotron a:hover {
-  text-decoration: underline;
-}*/
 
 .cover_info1 {
   max-width: 80%;

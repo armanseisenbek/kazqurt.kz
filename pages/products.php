@@ -44,19 +44,28 @@
 				<!-- title of product -->
 				<h1 class="display-3 text-center" style="text-transform: uppercase;"><?php echo $prod['title']; ?></h1>
 				<!-- text on product banner -->
-				<p class="lead"><?php echo $prod['banner_info']; ?></p>
+				<p class="lead text-center"><?php echo $prod['banner_info']; ?></p>
 			</header>
 
 			<!-- grid column -->
-			<div class="mb-4" id="anchor">
-				<div class="cover_info1">
-					<!-- Display information about current product -->
-					<p>
-						<?php echo $prod['info']; ?>
-						There should be information about product
-					</p>
+			<div class="mb-4">
 
-				</div>
+				<!-- Display information about current product -->
+				<p class="productInfo">
+					<?php echo $prod['info']; ?>
+				</p>
+
+				<!-- create link for jump to order section -->
+					<div id="submit-button"></div>
+					<div class="order-section">
+						<!-- link to the to cart -->
+						<a href="/my_purchases.php?id=<?php echo $prod['title'] ?>">
+							<!-- button with icon of bag -->
+							<button type="submit" name="send" class="btn btn-success btn-lg btn-block">
+								Add to cart <i class="fa fa-shopping-bag"></i>
+							</button>
+						</a>
+					</div>
 
 				<!-- Gallery -->
 				<div class="gallery-block compact-gallery">
@@ -85,18 +94,6 @@
 				</div>
 
 				<!-- / Gallery -->
-
-				<!-- create link for jump to order section -->
-					<div id="submit-button"></div>
-					<div class="order-section">
-						<!-- link to the to cart -->
-						<a href="/my_purchases.php?id=<?php echo $prod['title'] ?>">
-							<!-- button with icon of bag -->
-							<button type="submit" name="send" class="btn btn-success btn-lg btn-block">
-								Add to cart <i class="fa fa-shopping-bag"></i>
-							</button>
-						</a>
-					</div>
 
 				<!-- bottom section -->
 				<div class="bottom-section">
@@ -131,8 +128,8 @@
 							<!-- grid  -->
 							<div class="col-md-6 col-lg-4 item zoom-on-hover">
 								<a href="/pages/products.php?id=<?php echo $i; ?>">
-									<img 
-										class="img-fluid image" 
+									<img
+										class="img-fluid image bottomProducts" 
 										src="../img/product-gallery/<?php echo $product['title']; ?>/<?php echo $product['title'] . 1 . '.jpg'; ?>"
 									>
 								</a>
