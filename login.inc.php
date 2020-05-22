@@ -38,6 +38,7 @@ if (isset($_POST['signup'])) {
       mysqli_query($conn, $sql);
 
       setcookie('user', $name, time() + 3600, "/");
+      setcookie('phone', $user['phone'], time() + 3600, "/");
 
       // отрезаю еррорные сообщения с адресной строки
       header("Location: " . $redirect);
@@ -60,6 +61,7 @@ if (isset($_POST['login'])) {
   if (password_verify($password, $hashPassword)) {
 
     setcookie('user', $user['name'], time() + 3600, "/");
+    setcookie('phone', $user['phone'], time() + 3600, "/");
 
     // отрезаю еррорные сообщения с адресной строки
     header("Location: " . $redirect);

@@ -20,31 +20,35 @@
 	<!-- Navigation -->
 	<?php include "../includes/navbar.php"; ?>
 	<br><br><br>
-	
+
 	<?php
-	// query on the database to get information about the product by id
-	$product = mysqli_query($connection, "SELECT * FROM `products` WHERE `title` = '" .  $_GET['id'] . "'");
+  // query on the database to get information about the product by id
+  $product = mysqli_query($connection, "SELECT * FROM products WHERE title = '" .  $_GET['id'] . "'");
 
-	$prod = mysqli_fetch_assoc($product);
+  $prod = mysqli_fetch_assoc($product);
 
-	if (isset($_POST['send'])) {
+  $user = mysqli_query($connection, "SELECT * FROM customers WHERE name = '" . $_COOKIE['user'] . "'");
 
-		mysqli_query($connection, "INSERT INTO `cart`(
-			  `product_name`,
-			  `customer_email`,
-			  `price`
-			  )
-			VALUES
-			  ('" . $prod['title'] . "', 
-			   '" . $_COOKIE['user'] . "', "
-			. $prod['price'] . " 
-			  )");
-	}
-	?>
+  $concr = mysqli_fetch_assoc($user);
+
+  if (isset($_POST['send'])) {
+
+    mysqli_query($connection, "INSERT INTO cart(
+        product_name,
+        customer_email,
+        price
+        )
+      VALUES
+        ('" . $prod['title'] . "',
+         '" . $_COOKIE['user'] . "', "
+      . $prod['price'] . "
+        )");
+  }
+  ?>
 
 	<div class="row">
 		<!-- This justifies column size. Our is middle size 5 first rows -->
-		<div class="col-md-5">
+		<div class="col-md-5" style="margin-top: 60px;">
 			<h5>Customer</h5>
 			<hr>
 			<!-- CARD class in bootstrap is smth like container with information -->
@@ -61,8 +65,8 @@
 
 					<tr>
 						<td><a class="btn btn-sm btn-info" href="#">View</a></td>
-						<td>Name</td>
-						<td>Phone</td>
+						<td><?php echo $_COOKIE['user'] ?></td>
+						 <td><?php echo $_COOKIE['phone'] ?></td>
 					</tr>
 
 				</table>
@@ -123,7 +127,7 @@
 							<? }
 							?>
 
-						
+
 						</tr>
 					</table>
 				</form>
@@ -157,7 +161,7 @@
 
 					// SQL query for get count of orders
 					$orders_get_count = mysqli_query($connection, "SELECT COUNT(id) FROM `orders`");
-					// extract data from the database to the array 
+					// extract data from the database to the array
 					$orders_count = mysqli_fetch_assoc($orders_get_count);
 					$counter = 0;
 
@@ -170,7 +174,7 @@
 
 
 
-						// SQL query for extract data from the database via ID 
+						// SQL query for extract data from the database via ID
 						$orders_get_id = mysqli_query($connection, "SELECT * FROM `orders` WHERE `id` = " . $i);
 						$orders = mysqli_fetch_assoc($orders_get_id);
 

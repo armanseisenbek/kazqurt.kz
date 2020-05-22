@@ -1,5 +1,6 @@
 <?php
-  setcookie('user', $_POST['email'], time() - 3600, "/");
+  setcookie('user', '', time() - 3600, "/");
+  setcookie('phone', '', time() - 3600, "/");
   if (strpos($_SERVER['HTTP_REFERER'], '&') === false) {
     header("Location: " . $_SERVER['HTTP_REFERER']);
   }else {

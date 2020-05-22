@@ -87,7 +87,7 @@
             <br>
             <!-- phone number -->
             <label>Phone number:</label>
-            <input type="number" name="phone" placeholder="8-707-727-77-77">
+            <input type="tel" name="phone" pattern="[0-9]{11}" placeholder="8-707-727-77-77" required>
             <br>
             <!-- city -->
             <label>Your city:</label>
